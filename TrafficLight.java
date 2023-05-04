@@ -15,7 +15,7 @@ class Figure extends JComponent{
     public void paintComponent(Graphics graphics){
         graphics.setColor(color);
         if (type == 0) {
-            graphics.fillRoundRect(0, 0, 100, 270, 20, 20);
+            graphics.fillRoundRect(0, 0, 100, 280, 20, 20);
         }
         if (type == 1) {
             graphics.fillRoundRect(0, 0, 40, 50, 10, 10);
@@ -45,6 +45,12 @@ class Figure extends JComponent{
         if (type == 8) {
             graphics.fillRoundRect(0, 0, 70, 5, 10, 10);
         }
+        if (type == 9) {
+            graphics.fillOval(0, 0, 70, 70);
+        }
+        if (type == 10) {
+            graphics.fillOval(0, 0, 80, 80);
+        }
     }
 }
 
@@ -59,6 +65,16 @@ class JLayeredPaneTest extends JFrame{
         Figure figure2 = new Figure(Color.DARK_GRAY, 1);
         Figure figure21 = new Figure(Color.DARK_GRAY, 7);
         Figure figure22 = new Figure(Color.DARK_GRAY, 8);
+        //Круги.
+        Figure figure23 = new Figure(Color.RED, 9);
+        Figure figure24 = new Figure(Color.YELLOW, 9);
+        Figure figure25 = new Figure(Color.GREEN, 9);
+        Figure figure26 = new Figure(Color.DARK_GRAY, 10);
+        Figure figure27 = new Figure(Color.DARK_GRAY, 10);
+        Figure figure28 = new Figure(Color.DARK_GRAY, 10);
+        Figure figure29 = new Figure(Color.WHITE, 10);
+        Figure figure30 = new Figure(Color.WHITE, 10);
+        Figure figure31 = new Figure(Color.WHITE, 10);
         //Левые треугольники
         Figure figure3 = new Figure(Color.DARK_GRAY, 2);
         Figure figure4 = new Figure(Color.DARK_GRAY, 2);
@@ -81,10 +97,22 @@ class JLayeredPaneTest extends JFrame{
         Figure figure20 = new Figure(Color.DARK_GRAY, 5);
 
 
-        figure1.setBounds(225, 165, 100 , 270);
+        figure1.setBounds(225, 155, 100 , 280);
         figure2.setBounds(255, 440, 40 , 50);
-        figure21.setBounds(240, 145, 70 , 10);
-        figure22.setBounds(240, 153, 70 , 5);
+        figure21.setBounds(240, 137, 70 , 10);
+        figure22.setBounds(240, 145, 70 , 5);
+
+        figure23.setBounds(240, 175, 70, 70);
+        figure24.setBounds(240, 265, 70 , 70);
+        figure25.setBounds(240, 355, 70 , 70);
+
+        figure26.setBounds(235, 170, 80, 80);
+        figure27.setBounds(235, 260, 80 , 80);
+        figure28.setBounds(235, 350, 80 , 80);
+
+        figure29.setBounds(235, 160, 80, 80);
+        figure30.setBounds(235, 250, 80 , 80);
+        figure31.setBounds(235, 340, 80 , 80);
 
         figure3.setBounds(165, 190, 50 , 50);
         figure4.setBounds(165, 270, 50 , 50);
@@ -128,6 +156,15 @@ class JLayeredPaneTest extends JFrame{
         lp.add(figure20, JLayeredPane.PALETTE_LAYER);
         lp.add(figure21, JLayeredPane.PALETTE_LAYER);
         lp.add(figure22, JLayeredPane.PALETTE_LAYER);
+        lp.add(figure23, JLayeredPane.POPUP_LAYER);
+        lp.add(figure24, JLayeredPane.POPUP_LAYER);
+        lp.add(figure25, JLayeredPane.POPUP_LAYER);
+        lp.add(figure26, JLayeredPane.POPUP_LAYER);
+        lp.add(figure27, JLayeredPane.POPUP_LAYER);
+        lp.add(figure28, JLayeredPane.POPUP_LAYER);
+        lp.add(figure29, JLayeredPane.POPUP_LAYER);
+        lp.add(figure30, JLayeredPane.POPUP_LAYER);
+        lp.add(figure31, JLayeredPane.POPUP_LAYER);
 
         setSize(550, 600);
         getContentPane().setBackground(Color.lightGray);
